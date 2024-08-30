@@ -1,0 +1,17 @@
+.v-footer {
+  height: 100px !important;
+  justify-content: center;
+  background-color: $background-color !important;
+
+  .copyright {
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+
+    font-size: smaller;
+    color: $secondary-color;
+
+    box-shadow:
+      0px -8px 12px white,
+      0px 8px 12px rgba(black, 0.1);
+  }
+}
