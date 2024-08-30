@@ -1,5 +1,5 @@
 @import '_variables.scss';
 
-@import 'layout/footer';
+@import 'layout/header.scss', 'layout/content.scss', 'layout/footer';
 
-@import 'page/home';
+@import 'page/home', 'page/about';

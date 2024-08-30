@@ -1,8 +1,6 @@
 const routeName = {
   home: 'home',
-  omega: 'omega',
-  meduse: 'meduse',
-  travelSong: 'travelSong'
+  about: 'about'
 }
 
 export default routeName
