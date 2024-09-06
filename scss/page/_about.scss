@@ -17,6 +17,7 @@
   }
 
   button {
+    color: $secondary-color;
     background-color: $background-color !important;
     box-shadow:
       0px -8px 10px white,
@@ -26,6 +27,13 @@
       box-shadow:
         0px -4px 4px white,
         0px 2px 6px rgba(black, 0.2) !important;
+    }
+
+    &:focus {
+      color: $primary-color;
+      box-shadow:
+        inset 0px -4px 4px white,
+        inset 0px 2px 6px rgba(black, 0.2) !important;
     }
   }
 
@@ -70,18 +78,17 @@
       color: $secondary-color;
     }
   }
-}
 
-.directory {
-  box-shadow: 0 0 !important;
-  .category {
-    height: 100px !important;
+  .directory {
+    box-shadow: 0 0 !important;
 
-    .v-btn {
-      margin-right: 1.5em;
-      height: 26px !important;
-      border-radius: 20px !important;
-      padding: 5px 15px 5px 15px !important;
+    .filter {
+      height: 10vh;
+    }
+
+    .filter-list {
+      border-radius: 20px;
+      padding: 5px 15px 5px 15px;
 
       font-size: smaller;
       color: $secondary-color;
@@ -89,11 +96,55 @@
       box-shadow:
         0px -8px 12px white,
         0px 8px 12px rgba(black, 0.1);
+    }
+    .filter-list:nth-child(2) {
+      margin: 1.5em;
+    }
 
-      &:hover {
+    .v-field {
+      border-radius: 20px;
+      box-shadow:
+        inset 0px -8px 12px white,
+        inset 0px 8px 12px rgba(black, 0.1);
+
+      .v-field__append-inner {
+        height: 40px;
+        width: 40px;
+
+        display: flex;
+        align-content: center;
+        justify-content: center;
+
+        border-radius: 20px;
         box-shadow:
-          inset 0px -8px 12px white,
-          inset 0px 8px 12px rgba(black, 0.1) !important;
+          0px -8px 12px white,
+          0px 8px 12px rgba(black, 0.1);
+      }
+
+      .v-field__outline {
+        display: none;
+      }
+    }
+
+    .table {
+      height: calc(100% - 10vh);
+    }
+
+    .v-data-table {
+      min-height: 60vh;
+      border-radius: 20px;
+      background-color: $background-color;
+      box-shadow:
+        0px -8px 12px white,
+        0px 8px 12px rgba(black, 0.1);
+    }
+
+    .v-pagination {
+      padding: 1em;
+
+      .v-btn {
+        height: 20px !important;
+        border-radius: 20px !important;
       }
     }
   }
