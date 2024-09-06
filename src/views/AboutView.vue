@@ -44,7 +44,7 @@
             <v-data-table
               :headers="headers"
               :items="desserts"
-              :items-per-page="5"
+              :items-per-page="itemsPerPage"
               :search="search"
               v-model:page="page"
             >
@@ -64,13 +64,14 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 const props = defineProps<{ account: string }>()
 
 const search = ref<string>('')
 
 const page = ref<number>(1)
+const itemsPerPage = ref<number>(5)
 
 const filterItems = ['新詩', '新詩 II', '新詩 III']
 
@@ -80,7 +81,13 @@ const headers = [
 ]
 
 const pageCount = computed(() => {
-  return Math.ceil(desserts.length / 5)
+  return Math.ceil(desserts.length / itemsPerPage.value)
+})
+
+onMounted(() => {
+  itemsPerPage.value = Math.floor(
+    (document.getElementsByClassName('v-table__wrapper')[0].clientHeight - 56) / 52
+  )
 })
 
 const desserts = [
